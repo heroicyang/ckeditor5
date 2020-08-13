@@ -38,7 +38,7 @@ $ gitpkg publish
 // 以下是正确发布的结果
 gitpkg publish v1.0.0-beta.2
 ✔ success Package uploaded to git@github.com:mycolorway/ckeditor5.git with the name ckeditor5-widget-21.1.1.
-+ @ckeditor/ckeditor5-typing@21.0.0
++ @ckeditor/ckeditor5-widget@21.1.1
 ```
 
 如此，gitpkg 会将当前 package 的代码打包成整个项目的一个 tag，以在 Tower 主项目中进行覆盖式引用。
