@@ -78,6 +78,8 @@ export default class Document {
 		 */
 		this.set( 'isFocused', false );
 
+		this.set( 'isCodeEditing', false );
+
 		/**
 		 * True if composition is in progress inside the document.
 		 *

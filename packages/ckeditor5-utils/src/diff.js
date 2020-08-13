@@ -34,6 +34,15 @@ export default function diff( a, b, cmp ) {
 		return a === b;
 	};
 
+	// Transform text or any iterable into arrays for easier, consistent processing.
+	if ( !Array.isArray( a ) ) {
+		a = Array.from( a );
+	}
+
+	if ( !Array.isArray( b ) ) {
+		b = Array.from( b );
+	}
+
 	const aLength = a.length;
 	const bLength = b.length;
 

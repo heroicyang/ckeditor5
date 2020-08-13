@@ -101,6 +101,8 @@ export default class Renderer {
 		 */
 		this.isFocused = false;
 
+		this.isCodeEditing = false;
+
 		/**
 		 * The text node in which the inline filler was rendered.
 		 *
@@ -195,17 +197,21 @@ export default class Renderer {
 			this.markedChildren.add( inlineFillerPosition.parent );
 		}
 
-		for ( const element of this.markedAttributes ) {
-			this._updateAttrs( element );
+		if ( !this.isComposing ) {
+			for ( const element of this.markedAttributes ) {
+				this._updateAttrs( element );
+			}
 		}
 
 		for ( const element of this.markedChildren ) {
 			this._updateChildren( element, { inlineFillerPosition } );
 		}
 
-		for ( const node of this.markedTexts ) {
-			if ( !this.markedChildren.has( node.parent ) && this.domConverter.mapViewToDom( node.parent ) ) {
-				this._updateText( node, { inlineFillerPosition } );
+		if ( !this.isComposing ) {
+			for ( const node of this.markedTexts ) {
+				if ( !this.markedChildren.has( node.parent ) && this.domConverter.mapViewToDom( node.parent ) ) {
+					this._updateText( node, { inlineFillerPosition } );
+				}
 			}
 		}
 
@@ -231,8 +237,10 @@ export default class Renderer {
 			this._inlineFiller = null;
 		}
 
-		this._updateSelection();
-		this._updateFocus();
+		if ( !this.isCodeEditing && !this.isComposing ) {
+			this._updateSelection();
+			this._updateFocus();
+		}
 
 		this.markedTexts.clear();
 		this.markedAttributes.clear();
@@ -547,6 +555,7 @@ export default class Renderer {
 
 		let i = 0;
 		const nodesToUnbind = new Set();
+		const nodesInserted = new Set();
 
 		// Handle deletions first.
 		// This is to prevent a situation where an element that already exists in `actualDomChildren` is inserted at a different
@@ -556,8 +565,12 @@ export default class Renderer {
 		// It doesn't matter in what order we remove or add nodes, as long as we remove and add correct nodes at correct indexes.
 		for ( const action of diff ) {
 			if ( action === 'delete' ) {
-				nodesToUnbind.add( actualDomChildren[ i ] );
-				remove( actualDomChildren[ i ] );
+				if ( actualDomChildren[ i ] && !nodesInserted.has( actualDomChildren[ i ] ) ) {
+					nodesToUnbind.add( actualDomChildren[ i ] );
+					if ( !this.isComposing ) {
+						remove( actualDomChildren[ i ] );
+					}
+				}
 			} else if ( action === 'equal' ) {
 				i++;
 			}
@@ -567,7 +580,9 @@ export default class Renderer {
 
 		for ( const action of diff ) {
 			if ( action === 'insert' ) {
-				insertAt( domElement, i, expectedDomChildren[ i ] );
+				if ( !this.isComposing ) {
+					insertAt( domElement, i, expectedDomChildren[ i ] );
+				}
 				i++;
 			} else if ( action === 'equal' ) {
 				// Force updating text nodes inside elements which did not change and do not need to be re-rendered (#1125).
