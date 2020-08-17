@@ -62,9 +62,15 @@ export default class ImageResizeHandles extends Plugin {
 					},
 					// TODO consider other positions.
 					isCentered() {
-						const imageStyle = data.item.getAttribute( 'imageStyle' );
+						if (data.item.parent && data.item.parent.is('element', 'paragraph')) {
+							const alignment = data.item.parent.getAttribute( 'alignment' );
 
-						return !imageStyle || imageStyle == 'full' || imageStyle == 'alignCenter';
+							return alignment == 'center'
+						} else {
+							const imageStyle = data.item.getAttribute( 'imageStyle' );
+
+							return !imageStyle || imageStyle == 'full' || imageStyle == 'alignCenter';
+						}
 					},
 
 					onCommit( newValue ) {
