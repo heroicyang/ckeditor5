@@ -62,7 +62,7 @@ export default class ImageResizeHandles extends Plugin {
 					},
 					// TODO consider other positions.
 					isCentered() {
-						if (data.item.parent && data.item.parent.is('element', 'paragraph')) {
+						if (data.item.parent && !data.item.parent.is('element', '$root')) {
 							const alignment = data.item.parent.getAttribute( 'alignment' );
 
 							return alignment == 'center'
