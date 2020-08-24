@@ -167,12 +167,12 @@ export default class TableKeyboard extends Plugin {
 		const editor = this.editor;
 		const keyCode = domEventData.keyCode;
 
-		if ( !isArrowKeyCode( keyCode ) ) {
+		if ( !isArrowKeyCode( keyCode )) {
 			return;
 		}
 
 		const direction = getLocalizedArrowKeyCodeDirection( keyCode, editor.locale.contentLanguageDirection );
-		const wasHandled = this._handleArrowKeys( direction, domEventData.shiftKey );
+		const wasHandled = this._handleArrowKeys( direction, domEventData );
 
 		if ( wasHandled ) {
 			domEventData.preventDefault();
@@ -189,10 +189,18 @@ export default class TableKeyboard extends Plugin {
 	 * @param {Boolean} expandSelection If the current selection should be expanded.
 	 * @returns {Boolean} Returns `true` if key was handled.
 	 */
-	_handleArrowKeys( direction, expandSelection ) {
+	_handleArrowKeys( direction, { altKey, ctrlKey, shiftKey } ) {
 		const model = this.editor.model;
 		const selection = model.document.selection;
 		const isForward = [ 'right', 'down' ].includes( direction );
+		const expandSelection = shiftKey;
+		const expandRowOrColumn = altKey && ctrlKey;
+
+		if ( expandRowOrColumn ) {
+			this._handleExpandRowOrColumn( direction );
+
+			return true
+		}
 
 		// In case one or more table cells are selected (from outside),
 		// move the selection to a cell adjacent to the selected table fragment.
@@ -262,6 +270,25 @@ export default class TableKeyboard extends Plugin {
 
 			return true;
 		}
+	}
+
+	_handleExpandRowOrColumn(direction) {
+		let command;
+		switch(direction) {
+			case 'up':
+				command = 'insertTableRowAbove';
+				break;
+			case 'right':
+				command = 'insertTableColumnRight';
+				break;
+			case 'down':
+				command = 'insertTableRowBelow';
+				break;
+			case 'left':
+				command = 'insertTableColumnLeft';
+				break
+		}
+		this.editor.execute(command);
 	}
 
 	/**
