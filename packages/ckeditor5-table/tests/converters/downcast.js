@@ -43,7 +43,7 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block"></span>' +
+										'<span></span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -524,12 +524,12 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 								'</tr>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block"></span>' +
+										'<span></span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -659,10 +659,10 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block"></span>' +
+										'<span></span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -764,7 +764,7 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -830,7 +830,7 @@ describe( 'downcast converters', () => {
 							'<thead>' +
 								'<tr>' +
 									'<th class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</th>' +
 								'</tr>' +
 							'</thead>' +
@@ -1012,7 +1012,7 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<th class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</th>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1073,10 +1073,10 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">01</span>' +
+										'<span>01</span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1104,10 +1104,10 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">10</span>' +
+										'<span>10</span>' +
 									'</td>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">11</span>' +
+										'<span>11</span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1137,10 +1137,10 @@ describe( 'downcast converters', () => {
 							'<thead>' +
 								'<tr>' +
 									'<th class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">10</span>' +
+										'<span>10</span>' +
 									'</th>' +
 									'<th class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">11</span>' +
+										'<span>11</span>' +
 									'</th>' +
 								'</tr>' +
 							'</thead>' +
@@ -1170,10 +1170,10 @@ describe( 'downcast converters', () => {
 							'<thead>' +
 								'<tr>' +
 									'<th class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</th>' +
 									'<th class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">01</span>' +
+										'<span>01</span>' +
 									'</th>' +
 								'</tr>' +
 							'</thead>' +
@@ -1205,21 +1205,21 @@ describe( 'downcast converters', () => {
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" ' +
 										'colspan="2" contenteditable="true" rowspan="2">' +
-										'<span style="display:inline-block">10</span>' +
+										'<span>10</span>' +
 									'</td>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">12</span>' +
+										'<span>12</span>' +
 									'</td>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">13</span>' +
+										'<span>13</span>' +
 									'</td>' +
 								'</tr>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">22</span>' +
+										'<span>22</span>' +
 									'</td>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">23</span>' +
+										'<span>23</span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1249,10 +1249,10 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">10</span>' +
+										'<span>10</span>' +
 									'</td>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">11</span>' +
+										'<span>11</span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1280,10 +1280,10 @@ describe( 'downcast converters', () => {
 							'<thead>' +
 								'<tr>' +
 									'<th class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</th>' +
 									'<th class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">01</span>' +
+										'<span>01</span>' +
 									'</th>' +
 								'</tr>' +
 							'</thead>' +
@@ -1327,7 +1327,7 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable highlight-yellow" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1346,7 +1346,7 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1383,12 +1383,12 @@ describe( 'downcast converters', () => {
 						'<tbody>' +
 							'<tr>' +
 								'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-									'<span style="display:inline-block">00</span>' +
+									'<span>00</span>' +
 								'</td>' +
 							'</tr>' +
 							'<tr>' +
 								'<td class="ck-editor__editable ck-editor__nested-editable highlight-yellow" contenteditable="true">' +
-									'<span style="display:inline-block"></span>' +
+									'<span></span>' +
 								'</td>' +
 							'</tr>' +
 						'</tbody>' +
@@ -1407,12 +1407,12 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 								'</tr>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block"></span>' +
+										'<span></span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1447,10 +1447,10 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable highlight-yellow" contenteditable="true">' +
-										'<span style="display:inline-block"></span>' +
+										'<span></span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1469,10 +1469,10 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block"></span>' +
+										'<span></span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1584,7 +1584,7 @@ describe( 'downcast converters', () => {
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable highlight-yellow marker user-marker"' +
 										' contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
@@ -1603,7 +1603,7 @@ describe( 'downcast converters', () => {
 							'<tbody>' +
 								'<tr>' +
 									'<td class="ck-editor__editable ck-editor__nested-editable" contenteditable="true">' +
-										'<span style="display:inline-block">00</span>' +
+										'<span>00</span>' +
 									'</td>' +
 								'</tr>' +
 							'</tbody>' +
