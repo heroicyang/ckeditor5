@@ -8,7 +8,7 @@ order: 10
 # For now, due to lack of content, it is called "advanced concepts".
 ---
 
-# Advanced conversion concepts
+# Advanced conversion concepts &mdash; attributes
 
 This guide extends the {@link framework/guides/architecture/editing-engine introduction to CKEditor 5 editing engine architecture}. Therefore, we highly recommend reading the former guide first.
 
@@ -126,3 +126,4 @@ Once you understand more about the conversion of model attributes, you can check
 
 * {@link framework/guides/deep-dive/conversion-extending-output Extending the editor output} &mdash; How to extend the output of existing CKEditor 5 features.
 * {@link framework/guides/deep-dive/conversion-preserving-custom-content Preserving custom content} &mdash; How to make CKEditor 5 accept more content.
+* {@link framework/guides/deep-dive/custom-element-conversion Custom element conversion} &mdash; How to deal with complex view structures during the model-to-view conversion.
