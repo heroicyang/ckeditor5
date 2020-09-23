@@ -78,18 +78,18 @@ export default class Autoformat extends Plugin {
 		const commands = this.editor.commands;
 
 		if ( commands.get( 'bold' ) ) {
-			const boldCallback = getCallbackFunctionForInlineAutoformat( this.editor, 'bold' );
+			// const boldCallback = getCallbackFunctionForInlineAutoformat( this.editor, 'bold' );
 
-			inlineAutoformatEditing( this.editor, this, /(\*\*)([^*]+)(\*\*)$/g, boldCallback );
+			// inlineAutoformatEditing( this.editor, this, /(\*\*)([^*]+)(\*\*)$/g, boldCallback );
 			// inlineAutoformatEditing( this.editor, this, /(__)([^_]+)(__)$/g, boldCallback );
 		}
 
 		if ( commands.get( 'italic' ) ) {
-			const italicCallback = getCallbackFunctionForInlineAutoformat( this.editor, 'italic' );
+			// const italicCallback = getCallbackFunctionForInlineAutoformat( this.editor, 'italic' );
 
 			// The italic autoformatter cannot be triggered by the bold markers, so we need to check the
 			// text before the pattern (e.g. `(?:^|[^\*])`).
-			inlineAutoformatEditing( this.editor, this, /(?:^|[^*])(\*)([^*_]+)(\*)$/g, italicCallback );
+			// inlineAutoformatEditing( this.editor, this, /(?:^|[^*])(\*)([^*_]+)(\*)$/g, italicCallback );
 			// inlineAutoformatEditing( this.editor, this, /(?:^|[^_])(_)([^_]+)(_)$/g, italicCallback );
 		}
 
